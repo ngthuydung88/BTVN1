@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230828 23:12:14.085" rpa="false" schemaversion="4">
+<suite id="s1" name="Tiki.Vn" source="C:\Users\DUNG\Desktop\BTVN\BTVN\tiki.vn">
+<suite id="s1-s1" name="Tiki" source="C:\Users\DUNG\Desktop\BTVN\BTVN\tiki.vn\tiki.robot">
+<test id="s1-s1-t1" name="[TC01] - Automation Test Tiki" line="7">
+<kw name="start tiki" library="login_tiki">
+<arg>https://tiki.vn/</arg>
+<arg>chrome</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230828 23:12:14.368" level="INFO">Opening browser 'chrome' to base url 'https://tiki.vn/'.</msg>
+<msg timestamp="20230828 23:12:14.778" level="WARN">The chromedriver version (115.0.5790.170) detected in PATH at C:\Users\DUNG\Documents\webdriver\chromedriver.exe might not be compatible with the detected chrome version (116.0.5845.111); currently, chromedriver 116.0.5845.96 is recommended for chrome 116.*, so it is advised to delete the driver in PATH and retry</msg>
+<status status="PASS" starttime="20230828 23:12:14.367" endtime="20230828 23:12:17.265"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230828 23:12:17.266" endtime="20230828 23:12:17.435"/>
+</kw>
+<status status="PASS" starttime="20230828 23:12:14.367" endtime="20230828 23:12:17.436"/>
+</kw>
+<kw name="input keywords" library="keyword_tiki">
+<arg>//input[@data-view-id='main_search_form_input']</arg>
+<arg>nồi chiên</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inp_key}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230828 23:12:17.441" level="INFO">Typing text 'nồi chiên' into text field '//input[@data-view-id='main_search_form_input']'.</msg>
+<status status="PASS" starttime="20230828 23:12:17.438" endtime="20230828 23:12:17.932"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230828 23:12:19.934" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230828 23:12:17.932" endtime="20230828 23:12:19.935"/>
+</kw>
+<status status="PASS" starttime="20230828 23:12:17.437" endtime="20230828 23:12:19.935"/>
+</kw>
+<kw name="click keywords" library="keyword_tiki">
+<arg>//div[text()='nồi chiên không dầu']</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_key}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230828 23:12:19.944" level="INFO">Clicking element '//div[text()='nồi chiên không dầu']'.</msg>
+<status status="PASS" starttime="20230828 23:12:19.942" endtime="20230828 23:12:20.113"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230828 23:12:25.115" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230828 23:12:20.113" endtime="20230828 23:12:25.116"/>
+</kw>
+<status status="PASS" starttime="20230828 23:12:19.939" endtime="20230828 23:12:25.116"/>
+</kw>
+<kw name="click find second product" library="keyword_tiki">
+<arg>4</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@data-view-id='product_list_container']/div[${index}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230828 23:12:25.124" level="INFO">Clicking element '//div[@data-view-id='product_list_container']/div[4]'.</msg>
+<status status="PASS" starttime="20230828 23:12:25.122" endtime="20230828 23:12:25.265"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230828 23:12:30.266" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230828 23:12:25.265" endtime="20230828 23:12:30.267"/>
+</kw>
+<status status="PASS" starttime="20230828 23:12:25.120" endtime="20230828 23:12:30.268"/>
+</kw>
+<kw name="click buy button" library="keyword_tiki">
+<arg>Chọn mua</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[text()='${text_buy}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230828 23:12:30.272" level="INFO">Clicking element '//button[text()='Chọn mua']'.</msg>
+<status status="PASS" starttime="20230828 23:12:30.271" endtime="20230828 23:12:30.396"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230828 23:12:35.398" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230828 23:12:30.396" endtime="20230828 23:12:35.398"/>
+</kw>
+<status status="PASS" starttime="20230828 23:12:30.270" endtime="20230828 23:12:35.398"/>
+</kw>
+<kw name="verify key" library="keyword_tiki">
+<arg>Xin chào,</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//h4[text()='${text_key}']</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230828 23:12:35.400" endtime="20230828 23:12:35.432"/>
+</kw>
+<status status="PASS" starttime="20230828 23:12:35.399" endtime="20230828 23:12:35.432"/>
+</kw>
+<kw name="finish tiki" library="login_tiki">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230828 23:12:35.434" endtime="20230828 23:12:37.660"/>
+</kw>
+<status status="PASS" starttime="20230828 23:12:35.433" endtime="20230828 23:12:37.661"/>
+</kw>
+<doc>Verify search tiki</doc>
+<tag>function</tag>
+<status status="PASS" starttime="20230828 23:12:14.365" endtime="20230828 23:12:37.663"/>
+</test>
+<status status="PASS" starttime="20230828 23:12:14.126" endtime="20230828 23:12:37.670"/>
+</suite>
+<status status="PASS" starttime="20230828 23:12:14.092" endtime="20230828 23:12:37.679"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">function</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tiki.Vn">Tiki.Vn</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tiki">Tiki.Vn.Tiki</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230828 23:12:14.778" level="WARN">The chromedriver version (115.0.5790.170) detected in PATH at C:\Users\DUNG\Documents\webdriver\chromedriver.exe might not be compatible with the detected chrome version (116.0.5845.111); currently, chromedriver 116.0.5845.96 is recommended for chrome 116.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230829 21:07:48.202" rpa="false" schemaversion="4">
+<suite id="s1" name="Google" source="C:\Users\DUNG\Desktop\BTVN\BTVN\Google">
+<suite id="s1-s1" name="Google" source="C:\Users\DUNG\Desktop\BTVN\BTVN\Google\google.robot">
+<test id="s1-s1-t1" name="[AUT] - Automation Test google" line="9">
+<kw name="Truy cập google" library="login">
+<arg>https://www.google.com/</arg>
+<arg>chrome</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230829 21:07:48.496" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<msg timestamp="20230829 21:07:48.944" level="WARN">The chromedriver version (115.0.5790.170) detected in PATH at C:\Users\DUNG\Documents\webdriver\chromedriver.exe might not be compatible with the detected chrome version (116.0.5845.111); currently, chromedriver 116.0.5845.96 is recommended for chrome 116.*, so it is advised to delete the driver in PATH and retry</msg>
+<status status="PASS" starttime="20230829 21:07:48.495" endtime="20230829 21:07:51.327"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230829 21:07:51.327" endtime="20230829 21:07:51.451"/>
+</kw>
+<status status="PASS" starttime="20230829 21:07:48.494" endtime="20230829 21:07:51.451"/>
+</kw>
+<kw name="Tìm kiếm từ khóa &quot;MSB&quot;" library="keywork_google">
+<arg>//textarea[@id='APjFqb']</arg>
+<arg>MSB+RETURN</arg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_key}</arg>
+<arg>${input_location}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230829 21:07:51.454" level="INFO">Sending key(s) ('MSB+RETURN',) to //textarea[@id='APjFqb'] element.</msg>
+<msg timestamp="20230829 21:07:51.762" level="INFO">Sending keys MSB</msg>
+<msg timestamp="20230829 21:07:51.762" level="INFO">Pressing special key RETURN down.</msg>
+<msg timestamp="20230829 21:07:51.762" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20230829 21:07:51.453" endtime="20230829 21:07:53.978"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230829 21:07:58.978" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230829 21:07:53.978" endtime="20230829 21:07:58.979"/>
+</kw>
+<status status="PASS" starttime="20230829 21:07:51.452" endtime="20230829 21:07:58.979"/>
+</kw>
+<kw name="Click search" library="keywork_google">
+<arg>//h3[text()='MSB']</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${index}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230829 21:07:58.989" level="INFO">Clicking element '//h3[text()='MSB']'.</msg>
+<status status="PASS" starttime="20230829 21:07:58.984" endtime="20230829 21:08:21.578"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230829 21:08:25.580" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230829 21:08:21.578" endtime="20230829 21:08:25.581"/>
+</kw>
+<status status="PASS" starttime="20230829 21:07:58.982" endtime="20230829 21:08:25.582"/>
+</kw>
+<kw name="Out Popup" library="keywork_google">
+<arg>(//div[@class='pop-up-porlet-banner'])[2]//span</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${out_pap}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230829 21:08:25.589" level="INFO">Clicking element '(//div[@class='pop-up-porlet-banner'])[2]//span'.</msg>
+<status status="PASS" starttime="20230829 21:08:25.587" endtime="20230829 21:08:25.720"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230829 21:08:35.722" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230829 21:08:25.720" endtime="20230829 21:08:35.722"/>
+</kw>
+<status status="PASS" starttime="20230829 21:08:25.585" endtime="20230829 21:08:35.724"/>
+</kw>
+<kw name="Verify trang có chứa" library="keywork_google">
+<arg>Chọn thẻ phù hợp với bạn</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//div[@class="main-banner-section"]//div[text()='${text_key}']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230829 21:08:35.728" endtime="20230829 21:08:35.810"/>
+</kw>
+<status status="PASS" starttime="20230829 21:08:35.727" endtime="20230829 21:08:35.810"/>
+</kw>
+<kw name="finish" library="login">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230829 21:08:35.812" endtime="20230829 21:08:38.062"/>
+</kw>
+<status status="PASS" starttime="20230829 21:08:35.811" endtime="20230829 21:08:38.063"/>
+</kw>
+<doc>truy cap google</doc>
+<tag>Functional</tag>
+<status status="PASS" starttime="20230829 21:07:48.492" endtime="20230829 21:08:38.065"/>
+</test>
+<status status="PASS" starttime="20230829 21:07:48.240" endtime="20230829 21:08:38.072"/>
+</suite>
+<status status="PASS" starttime="20230829 21:07:48.208" endtime="20230829 21:08:38.083"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Functional</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Google">Google</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Google">Google.Google</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230829 21:07:48.944" level="WARN">The chromedriver version (115.0.5790.170) detected in PATH at C:\Users\DUNG\Documents\webdriver\chromedriver.exe might not be compatible with the detected chrome version (116.0.5845.111); currently, chromedriver 116.0.5845.96 is recommended for chrome 116.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>

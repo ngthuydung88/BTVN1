@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230829 21:00:14.771" rpa="false" schemaversion="4">
+<suite id="s1" name="Google &amp; Google">
+<suite id="s1-s1" name="Google" source="C:\Users\DUNG\Desktop\BTVN\BTVN\Google">
+<suite id="s1-s1-s1" name="Google" source="C:\Users\DUNG\Desktop\BTVN\BTVN\Google\google.robot">
+<test id="s1-s1-s1-t1" name="[AUT] - Automation Test google" line="9">
+<kw name="Truy cập google" library="login">
+<arg>https://www.google.com/</arg>
+<arg>chrome</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230829 21:00:15.078" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<msg timestamp="20230829 21:00:15.569" level="WARN">The chromedriver version (115.0.5790.170) detected in PATH at C:\Users\DUNG\Documents\webdriver\chromedriver.exe might not be compatible with the detected chrome version (116.0.5845.111); currently, chromedriver 116.0.5845.96 is recommended for chrome 116.*, so it is advised to delete the driver in PATH and retry</msg>
+<status status="PASS" starttime="20230829 21:00:15.077" endtime="20230829 21:00:18.105"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230829 21:00:18.105" endtime="20230829 21:00:18.229"/>
+</kw>
+<status status="PASS" starttime="20230829 21:00:15.076" endtime="20230829 21:00:18.229"/>
+</kw>
+<kw name="Tìm kiếm từ khóa &quot;MSB&quot;" library="keywork_google">
+<arg>//textarea[@id='APjFqb']</arg>
+<arg>MSB+RETURN</arg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_key}</arg>
+<arg>${input_location}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230829 21:00:18.231" level="INFO">Sending key(s) ('MSB+RETURN',) to //textarea[@id='APjFqb'] element.</msg>
+<msg timestamp="20230829 21:00:18.552" level="INFO">Sending keys MSB</msg>
+<msg timestamp="20230829 21:00:18.552" level="INFO">Pressing special key RETURN down.</msg>
+<msg timestamp="20230829 21:00:18.552" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20230829 21:00:18.230" endtime="20230829 21:00:18.779"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230829 21:00:23.780" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230829 21:00:18.779" endtime="20230829 21:00:23.780"/>
+</kw>
+<status status="PASS" starttime="20230829 21:00:18.230" endtime="20230829 21:00:23.780"/>
+</kw>
+<kw name="Click search" library="keywork_google">
+<arg>//h3[text()='MSB']</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${index}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230829 21:00:23.784" level="INFO">Clicking element '//h3[text()='MSB']'.</msg>
+<status status="PASS" starttime="20230829 21:00:23.782" endtime="20230829 21:00:30.543"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230829 21:00:34.544" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230829 21:00:30.543" endtime="20230829 21:00:34.544"/>
+</kw>
+<status status="PASS" starttime="20230829 21:00:23.781" endtime="20230829 21:00:34.544"/>
+</kw>
+<kw name="Out Popup" library="keywork_google">
+<arg>(//div[@class='pop-up-porlet-banner'])[2]</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${out_pap}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230829 21:00:34.546" level="INFO">Clicking element '(//div[@class='pop-up-porlet-banner'])[2]'.</msg>
+<status status="PASS" starttime="20230829 21:00:34.545" endtime="20230829 21:00:35.626"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230829 21:00:45.628" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230829 21:00:35.626" endtime="20230829 21:00:45.628"/>
+</kw>
+<status status="PASS" starttime="20230829 21:00:34.545" endtime="20230829 21:00:45.628"/>
+</kw>
+<kw name="Verify trang có chứa" library="keywork_google">
+<arg>Chọn thẻ phù hợp với bạn</arg>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//div[text()='${text_key}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230829 21:00:45.634" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=116.0.5845.111)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00262B63+47795]
+	(No symbol) [0x001F67E1]
+	(No symbol) [0x000FC7ED]
+	(No symbol) [0x000E3495]
+	(No symbol) [0x0014893B]
+	(No symbol) [0x00156D13]
+	(No symbol) [0x00144AC6]
+	(No symbol) [0x001213D7]
+	(No symbol) [0x0012255D]
+	GetHandleVerifier [0x004B6F89+2490073]
+	GetHandleVerifier [0x004FC361+2773681]
+	GetHandleVerifier [0x004F6211+2748769]
+	GetHandleVerifier [0x002E16B0+566784]
+	(No symbol) [0x0020019A]
+	(No symbol) [0x001FC418]
+	(No symbol) [0x001FC4FB]
+	(No symbol) [0x001EF317]
+	BaseThreadInitThunk [0x763300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77787B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x77787AEE+238]
+	(No symbol) [0x00000000]
+</msg>
+<msg timestamp="20230829 21:00:45.640" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=116.0.5845.111)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00262B63+47795]
+	(No symbol) [0x001F67E1]
+	(No symbol) [0x000FC7ED]
+	(No symbol) [0x000E3495]
+	(No symbol) [0x0014893B]
+	(No symbol) [0x00156D13]
+	(No symbol) [0x00144AC6]
+	(No symbol) [0x001213D7]
+	(No symbol) [0x0012255D]
+	GetHandleVerifier [0x004B6F89+2490073]
+	GetHandleVerifier [0x004FC361+2773681]
+	GetHandleVerifier [0x004F6211+2748769]
+	GetHandleVerifier [0x002E16B0+566784]
+	(No symbol) [0x0020019A]
+	(No symbol) [0x001FC418]
+	(No symbol) [0x001FC4FB]
+	(No symbol) [0x001EF317]
+	BaseThreadInitThunk [0x763300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77787B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x77787AEE+238]
+	(No symbol) [0x00000000]
+</msg>
+<status status="FAIL" starttime="20230829 21:00:45.629" endtime="20230829 21:00:45.725"/>
+</kw>
+<status status="FAIL" starttime="20230829 21:00:45.629" endtime="20230829 21:00:45.725"/>
+</kw>
+<kw name="finish" library="login">
+<status status="NOT RUN" starttime="20230829 21:00:45.726" endtime="20230829 21:00:45.726"/>
+</kw>
+<doc>truy cap google</doc>
+<tag>Functional</tag>
+<status status="FAIL" starttime="20230829 21:00:15.074" endtime="20230829 21:00:45.726">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=116.0.5845.111)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00262B63+47795]
+	(No symbol) [0x001F67E1]
+	(No symbol) [0x000FC7ED]
+	(No symbol) [0x000E3495]
+	(No symbol) [0x0014893B]
+	(No symbol) [0x00156D13]
+	(No symbol) [0x00144AC6]
+	(No symbol) [0x001213D7]
+	(No symbol) [0x0012255D]
+	GetHandleVerifier [0x004B6F89+2490073]
+	GetHandleVerifier [0x004FC361+2773681]
+	GetHandleVerifier [0x004F6211+2748769]
+	GetHandleVerifier [0x002E16B0+566784]
+	(No symbol) [0x0020019A]
+	(No symbol) [0x001FC418]
+	(No symbol) [0x001FC4FB]
+	(No symbol) [0x001EF317]
+	BaseThreadInitThunk [0x763300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77787B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x77787AEE+238]
+	(No symbol) [0x00000000]
+</status>
+</test>
+<status status="FAIL" starttime="20230829 21:00:14.806" endtime="20230829 21:00:45.734"/>
+</suite>
+<status status="FAIL" starttime="20230829 21:00:14.803" endtime="20230829 21:00:45.737"/>
+</suite>
+<suite id="s1-s2" name="Google" source="c:">
+<suite id="s1-s2-s1" name="Google" source="c:google.robot">
+<test id="s1-s2-s1-t1" name="[AUT] - Automation Test google" line="9">
+<kw name="Truy cập google" library="login">
+<arg>https://www.google.com/</arg>
+<arg>chrome</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230829 21:00:45.768" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<msg timestamp="20230829 21:00:46.303" level="WARN">The chromedriver version (115.0.5790.170) detected in PATH at C:\Users\DUNG\Documents\webdriver\chromedriver.exe might not be compatible with the detected chrome version (116.0.5845.111); currently, chromedriver 116.0.5845.96 is recommended for chrome 116.*, so it is advised to delete the driver in PATH and retry</msg>
+<status status="PASS" starttime="20230829 21:00:45.767" endtime="20230829 21:00:48.900"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20230829 21:00:48.906" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=116.0.5845.111)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00262B63+47795]
+	(No symbol) [0x001F67E1]
+	(No symbol) [0x000FC7ED]
+	(No symbol) [0x000E3495]
+	(No symbol) [0x0014893B]
+	(No symbol) [0x00156D13]
+	(No symbol) [0x00144AC6]
+	(No symbol) [0x001213D7]
+	(No symbol) [0x0012255D]
+	GetHandleVerifier [0x004B6F89+2490073]
+	GetHandleVerifier [0x004FC361+2773681]
+	GetHandleVerifier [0x004F6211+2748769]
+	GetHandleVerifier [0x002E16B0+566784]
+	(No symbol) [0x0020019A]
+	(No symbol) [0x001FC418]
+	(No symbol) [0x001FC4FB]
+	(No symbol) [0x001EF317]
+	BaseThreadInitThunk [0x763300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77787B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x77787AEE+238]
+	(No symbol) [0x00000000]
+</msg>
+<msg timestamp="20230829 21:00:48.918" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=116.0.5845.111)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00262B63+47795]
+	(No symbol) [0x001F67E1]
+	(No symbol) [0x000FC7ED]
+	(No symbol) [0x000E3495]
+	(No symbol) [0x0014893B]
+	(No symbol) [0x00156D13]
+	(No symbol) [0x00144AC6]
+	(No symbol) [0x001213D7]
+	(No symbol) [0x0012255D]
+	GetHandleVerifier [0x004B6F89+2490073]
+	GetHandleVerifier [0x004FC361+2773681]
+	GetHandleVerifier [0x004F6211+2748769]
+	GetHandleVerifier [0x002E16B0+566784]
+	(No symbol) [0x0020019A]
+	(No symbol) [0x001FC418]
+	(No symbol) [0x001FC4FB]
+	(No symbol) [0x001EF317]
+	BaseThreadInitThunk [0x763300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77787B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x77787AEE+238]
+	(No symbol) [0x00000000]
+</msg>
+<status status="FAIL" starttime="20230829 21:00:48.901" endtime="20230829 21:00:48.945"/>
+</kw>
+<status status="FAIL" starttime="20230829 21:00:45.765" endtime="20230829 21:00:48.945"/>
+</kw>
+<kw name="Tìm kiếm từ khóa &quot;MSB&quot;" library="keywork_google">
+<arg>//textarea[@id='APjFqb']</arg>
+<arg>MSB+RETURN</arg>
+<status status="NOT RUN" starttime="20230829 21:00:48.946" endtime="20230829 21:00:48.946"/>
+</kw>
+<kw name="Click search" library="keywork_google">
+<arg>//h3[text()='MSB']</arg>
+<status status="NOT RUN" starttime="20230829 21:00:48.947" endtime="20230829 21:00:48.947"/>
+</kw>
+<kw name="Out Popup" library="keywork_google">
+<arg>(//div[@class='pop-up-porlet-banner'])[2]</arg>
+<status status="NOT RUN" starttime="20230829 21:00:48.948" endtime="20230829 21:00:48.948"/>
+</kw>
+<kw name="Verify trang có chứa" library="keywork_google">
+<arg>Chọn thẻ phù hợp với bạn</arg>
+<status status="NOT RUN" starttime="20230829 21:00:48.949" endtime="20230829 21:00:48.949"/>
+</kw>
+<kw name="finish" library="login">
+<status status="NOT RUN" starttime="20230829 21:00:48.950" endtime="20230829 21:00:48.950"/>
+</kw>
+<doc>truy cap google</doc>
+<tag>Functional</tag>
+<status status="FAIL" starttime="20230829 21:00:45.763" endtime="20230829 21:00:48.950">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=116.0.5845.111)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00262B63+47795]
+	(No symbol) [0x001F67E1]
+	(No symbol) [0x000FC7ED]
+	(No symbol) [0x000E3495]
+	(No symbol) [0x0014893B]
+	(No symbol) [0x00156D13]
+	(No symbol) [0x00144AC6]
+	(No symbol) [0x001213D7]
+	(No symbol) [0x0012255D]
+	GetHandleVerifier [0x004B6F89+2490073]
+	GetHandleVerifier [0x004FC361+2773681]
+	GetHandleVerifier [0x004F6211+2748769]
+	GetHandleVerifier [0x002E16B0+566784]
+	(No symbol) [0x0020019A]
+	(No symbol) [0x001FC418]
+	(No symbol) [0x001FC4FB]
+	(No symbol) [0x001EF317]
+	BaseThreadInitThunk [0x763300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77787B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x77787AEE+238]
+	(No symbol) [0x00000000]
+</status>
+</test>
+<status status="FAIL" starttime="20230829 21:00:45.744" endtime="20230829 21:00:48.958"/>
+</suite>
+<status status="FAIL" starttime="20230829 21:00:45.739" endtime="20230829 21:00:48.961"/>
+</suite>
+<status status="FAIL" starttime="20230829 21:00:14.773" endtime="20230829 21:00:48.964"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="2" skip="0">Functional</stat>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Google &amp; Google">Google &amp; Google</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Google">Google &amp; Google.Google</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Google">Google &amp; Google.Google.Google</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s2" name="Google">Google &amp; Google.Google</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s2-s1" name="Google">Google &amp; Google.Google.Google</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230829 21:00:15.569" level="WARN">The chromedriver version (115.0.5790.170) detected in PATH at C:\Users\DUNG\Documents\webdriver\chromedriver.exe might not be compatible with the detected chrome version (116.0.5845.111); currently, chromedriver 116.0.5845.96 is recommended for chrome 116.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg timestamp="20230829 21:00:45.634" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=116.0.5845.111)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00262B63+47795]
+	(No symbol) [0x001F67E1]
+	(No symbol) [0x000FC7ED]
+	(No symbol) [0x000E3495]
+	(No symbol) [0x0014893B]
+	(No symbol) [0x00156D13]
+	(No symbol) [0x00144AC6]
+	(No symbol) [0x001213D7]
+	(No symbol) [0x0012255D]
+	GetHandleVerifier [0x004B6F89+2490073]
+	GetHandleVerifier [0x004FC361+2773681]
+	GetHandleVerifier [0x004F6211+2748769]
+	GetHandleVerifier [0x002E16B0+566784]
+	(No symbol) [0x0020019A]
+	(No symbol) [0x001FC418]
+	(No symbol) [0x001FC4FB]
+	(No symbol) [0x001EF317]
+	BaseThreadInitThunk [0x763300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77787B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x77787AEE+238]
+	(No symbol) [0x00000000]
+</msg>
+<msg timestamp="20230829 21:00:46.303" level="WARN">The chromedriver version (115.0.5790.170) detected in PATH at C:\Users\DUNG\Documents\webdriver\chromedriver.exe might not be compatible with the detected chrome version (116.0.5845.111); currently, chromedriver 116.0.5845.96 is recommended for chrome 116.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg timestamp="20230829 21:00:48.906" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=116.0.5845.111)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00262B63+47795]
+	(No symbol) [0x001F67E1]
+	(No symbol) [0x000FC7ED]
+	(No symbol) [0x000E3495]
+	(No symbol) [0x0014893B]
+	(No symbol) [0x00156D13]
+	(No symbol) [0x00144AC6]
+	(No symbol) [0x001213D7]
+	(No symbol) [0x0012255D]
+	GetHandleVerifier [0x004B6F89+2490073]
+	GetHandleVerifier [0x004FC361+2773681]
+	GetHandleVerifier [0x004F6211+2748769]
+	GetHandleVerifier [0x002E16B0+566784]
+	(No symbol) [0x0020019A]
+	(No symbol) [0x001FC418]
+	(No symbol) [0x001FC4FB]
+	(No symbol) [0x001EF317]
+	BaseThreadInitThunk [0x763300C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77787B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x77787AEE+238]
+	(No symbol) [0x00000000]
+</msg>
+</errors>
+</robot>
